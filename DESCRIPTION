@@ -1,7 +1,7 @@
 Package: rtrie
 Type: Package
 Title: A Simple R-Based Implementation of a Trie (A.k.a. Digital Tree/Radix Tree/Prefix Tree)
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Casimir", "Saternos", email="cas.saternos@gmail.com", role = c('aut','cre'))
 Maintainer: Casimir Saternos <cas.saternos@gmail.com>
 Description: A simple R-based implementation of a Trie (a.k.a. digital tree/radix tree/prefix tree)
@@ -9,7 +9,8 @@ Description: A simple R-based implementation of a Trie (a.k.a. digital tree/radi
     This ordered tree data structure  is used to store a dynamic set or associative array where the keys are usually strings.
 License: MIT + file LICENSE
 LazyData: true
-BugReports: https://github.com/ezgraphs/rbogglesolver/issues
+BugReports: https://github.com/ezgraphs/rtrie/issues
+URL: https://github.com/ezgraphs/rtrie
 Depends:
     R (>= 2.10)
 Suggests:

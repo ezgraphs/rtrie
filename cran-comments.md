@@ -7,7 +7,7 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
+* This has a couple of corrections to the DESCRIPTION and vignette that were not evident until after the previous version was released (apologies) this will be the last submission for awhile.
 
 ## Reverse dependencies
 
