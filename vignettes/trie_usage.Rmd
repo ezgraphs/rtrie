@@ -1,0 +1,73 @@
+---
+title: "Trie Usage"
+author: "Casimir Saternos"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Other Trie Packages
+The rtrie package provides a few simple functions to support tries
+representing lists of words.  Other R packages on CRAN provide
+trie implementations with different characteristics including:
+
+* [triebeard](https://cran.r-project.org/web/packages/triebeard/index.html)
+* [AhoCorasickTrie](https://cran.r-project.org/web/packages/AhoCorasickTrie/index.html)
+
+Also see various packages related to trees in general.
+
+# Trie Creation
+A list of words can be created programatically or read from a 
+data file or other source.  
+
+```{r}
+  words<-read.delim(file="../data/dictionary.txt", 
+                  header=F, sep = " ",
+                  stringsAsFactors = FALSE)
+  class(words)
+```
+
+In this case a data frame was created from a file. Creating a trie involves a simple function call to the char_tree function.  A trie is created from a vector passed as an argument 
+(in this case column V1 from the data frame).  
+
+```{r, eval=FALSE}
+trie <- char_tree(words$V1, 'X')
+```
+
+To get an idea of the performance, the file in question 
+contained `r length(words$V1)` words.  The microbenchmark 
+library can be used for timing.
+
+```{r}
+  library(rtrie)
+  library(microbenchmark)
+  timings <- microbenchmark(
+    trie <- char_tree(words$V1, 'X'), 
+    times=1
+  )
+  
+  print(paste(timings$time / 1000000000, 'seconds'))
+```
+
+# Match the Beginning of Words
+What are words that start with "stu".
+```{r}
+cat(matching_words('stu',trie))
+```
+
+# Test if a Character String is a Word
+Is "stunt" a word?
+```{r}
+cat(is_word('stunt',trie))
+```
+
+How about "stu"?
+```{r}
+cat(is_word('stu',trie))
+```
+
+
+

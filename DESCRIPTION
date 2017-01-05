@@ -15,7 +15,8 @@ Depends:
 Suggests:
     knitr(>= 1.14),
     rmarkdown(>= 1.2),
-    testthat(>= 1.0.2)
+    testthat(>= 1.0.2),
+    microbenchmark(>= 1.4-2.1)
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr
 

@@ -39,5 +39,3 @@ test_that("The expect_match method correctly matches words", {
                     matching_words('scatte',trie2))
 })
 
-#
-#  microbenchmark()
