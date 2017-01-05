@@ -14,8 +14,8 @@ The rtrie package provides a few simple functions to support tries
 representing lists of words.  Other R packages on CRAN provide
 trie implementations with different characteristics including:
 
-* [triebeard](https://cran.r-project.org/web/packages/triebeard/index.html)
-* [AhoCorasickTrie](https://cran.r-project.org/web/packages/AhoCorasickTrie/index.html)
+* [triebeard](https://CRAN.R-project.org/package=triebeard)
+* [AhoCorasickTrie](https://CRAN.R-project.org/package=AhoCorasickTrie)
 
 Also see various packages related to trees in general.
 
@@ -24,9 +24,10 @@ A list of words can be created programatically or read from a
 data file or other source.  
 
 ```{r}
-  words<-read.delim(file="../data/dictionary.txt", 
-                  header=F, sep = " ",
-                  stringsAsFactors = FALSE)
+  words<-read.delim(
+    file=system.file("extdata", "dictionary.txt", package = "rtrie"), 
+    header=F, sep = " ",
+    stringsAsFactors = FALSE)
   class(words)
 ```
 

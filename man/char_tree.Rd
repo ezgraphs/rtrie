@@ -19,6 +19,8 @@ Create a trie from a vector of words passed as an argument.
 Based on Florent Delmotte's response on http://stackoverflow.com/questions/27060453/how-to-build-an-alphabetical-tree-from-a-list-of-words-in-r.
 }
 \examples{
+char_tree(c('able', 'act', 'acts', 'across',
+            'act','bat','babble','bobble'), 'X')
 
 }
 

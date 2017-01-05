@@ -20,6 +20,9 @@ The match is anchored to the beginning of the string, so that words
 that start with the string "str" are returned.
 }
 \examples{
+trie <- char_tree(c('able', 'act', 'acts', 'across','act',
+                    'bat','babble','bobble'), 'X')
+matching_words('act',trie)
 
 }
 

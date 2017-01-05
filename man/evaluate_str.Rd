@@ -18,6 +18,9 @@ The list evaluated.
 evaluate_str
 }
 \examples{
+trie <- char_tree(c('able', 'act', 'acts', 'across','act',
+                    'bat','babble','bobble'), 'X')
+evaluate_str('acts',trie)
 
 }
 

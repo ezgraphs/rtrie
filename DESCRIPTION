@@ -1,6 +1,6 @@
 Package: rtrie
 Type: Package
-Title: A simple R-based implementation of a Trie (a.k.a. digital tree/radix tree/prefix tree)
+Title: A Simple R-Based Implementation of a Trie (A.k.a. Digital Tree/Radix Tree/Prefix Tree)
 Version: 0.1.0
 Author: person("Casimir", "Saternos", email="cas.saternos@gmail.com", role = c('aut','cre'))
 Maintainer: Casimir Saternos <cas.saternos@gmail.com>

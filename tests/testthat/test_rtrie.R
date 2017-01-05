@@ -30,9 +30,10 @@ test_that("The expect_match method correctly matches words", {
 
 test_that("The expect_match method correctly matches words", {
 
-  words<-read.delim(file="../../data/dictionary.txt",
-                    header=F, sep = " ",
-                    stringsAsFactors = FALSE)
+  words<-read.delim(
+    file=system.file("extdata", "dictionary.txt", package = "rtrie"),
+    header=F, sep = " ",
+    stringsAsFactors = FALSE)
   # Takes ~ 11 seconds to create a list of 80,000 words
   trie2 <- char_tree(words$V1, 'X')
   expect_equivalent(c('scatted','scatter','scatters'),

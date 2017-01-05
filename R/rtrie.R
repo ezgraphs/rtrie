@@ -11,6 +11,9 @@
 #' @param trie A trie representing a list of words
 #' @return The list evaluated.
 #' @examples
+#' trie <- char_tree(c('able', 'act', 'acts', 'across','act',
+#'                     'bat','babble','bobble'), 'X')
+#' evaluate_str('acts',trie)
 #'
 evaluate_str <- function(str, trie){
   str_path<- paste(unlist(strsplit(str,"")), collapse = "$")
@@ -28,6 +31,8 @@ evaluate_str <- function(str, trie){
 #' @param end Terminating character.  Default is NULL.
 #' @return a trie (list of lists)
 #' @examples
+#' char_tree(c('able', 'act', 'acts', 'across',
+#'             'act','bat','babble','bobble'), 'X')
 #'
 char_tree <- function(words, end = NULL) {
   first <- substr(words, 1, 1)
@@ -48,6 +53,9 @@ char_tree <- function(words, end = NULL) {
 #' @param trie A trie representing a list of words that will be searched.
 #' @return A vector of words represented in the trie that match the character string passed in as an argument.
 #' @examples
+#' trie <- char_tree(c('able', 'act', 'acts', 'across','act',
+#'                     'bat','babble','bobble'), 'X')
+#' matching_words('act',trie)
 #'
 matching_words <- function(str, trie){
   tmp<-names(!is.null(unlist(evaluate_str(str, trie))) &
@@ -62,10 +70,12 @@ matching_words <- function(str, trie){
 #'
 #' @export
 #' @param str A character string that may or may not be a word in the trie.
-#' @param trie_name The name of the trie to search.
+#' @param trie The trie to search.
 #' @return a Boolean
 #' @examples
-#' is_word('tree', 'trie')
+#' trie <- char_tree(c('able', 'act', 'acts', 'across','act',
+#'                     'bat','babble','bobble'), 'X')
+#' is_word('tree', trie)
 #'
 is_word <- function(str, trie){
   str %in% matching_words(str, trie)

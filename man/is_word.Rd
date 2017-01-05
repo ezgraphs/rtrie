@@ -9,7 +9,7 @@ is_word(str, trie)
 \arguments{
 \item{str}{A character string that may or may not be a word in the trie.}
 
-\item{trie_name}{The name of the trie to search.}
+\item{trie}{The trie to search.}
 }
 \value{
 a Boolean
@@ -18,7 +18,9 @@ a Boolean
 Verify whether or not a given string is a word in the trie
 }
 \examples{
-is_word('tree', 'trie')
+trie <- char_tree(c('able', 'act', 'acts', 'across','act',
+                    'bat','babble','bobble'), 'X')
+is_word('tree', trie)
 
 }
 
